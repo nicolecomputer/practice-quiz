@@ -19,13 +19,13 @@
   header {
     padding-top: 10px;
     min-height: 80px;
-    padding: 18px 12px 12px 12px;
+    padding: 22px 12px;
     position: sticky;
     top: 0;
     border-bottom: 2px solid rgb(219, 219, 219);
     margin-bottom: 12px;
 
-    background-color: white;
+    background-color: light-dark(white, #151e26);
     position: sticky;
     top: 0;
   }

@@ -9,6 +9,10 @@
   <div>
     <fieldset id="choices">
       {#each choices as choice, i}
+        <!-- Note: This div being clickable is here as a convenience for mouse
+          and touch users to be able to touch anywhere on the row and have it
+          select. For keyboard users the input and label provide the same
+          functionality and are much more accessible -->
         <div
           class="choice"
           onclick={() => {
@@ -18,6 +22,9 @@
             selectedIndex = i;
             onSelectChoice(i);
           }}
+          role="button"
+          tabindex={-1}
+          onkeypress={() => {}}
         >
           <input
             type="radio"
@@ -59,7 +66,7 @@
   }
 
   .choice:has(input[type="radio"]:checked) {
-    background-color: #fdf5d6;
+    background-color: light-dark(#fdf5d6, #fff3b751);
   }
 
   .choice label {
@@ -82,7 +89,7 @@
   }
 
   .choice input[type="radio"] {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.4);
   }
 
   .choice input[type="radio"]:checked {
